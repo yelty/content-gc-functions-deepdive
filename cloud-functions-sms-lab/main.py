@@ -8,7 +8,7 @@ from twilio.rest import Client
 TWILIO_ACCOUNT_SID = getenv('TWILIO_ACCOUNT_SID')
 TWILIO_AUTH_TOKEN = getenv('TWILIO_AUTH_TOKEN')
 TWILIO_NUMBER = getenv('TWILIO_NUMBER')
-
+DEST_NUMBER = getenv('DEST_NUMBER')
 BUCKET = getenv('BUCKET', 'sms-input')
 
 def send_sms(data,context):
@@ -18,7 +18,7 @@ def send_sms(data,context):
     client = twilio.rest.Client(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN)
 
     rv = client.messages.create(
-         to= TWILIO_NUMBER,
+         to= DEST_NUMBER,
          from_= TWILIO_NUMBER,
          body= theBody
      )
