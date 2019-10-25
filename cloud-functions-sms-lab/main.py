@@ -2,6 +2,7 @@ import logging
 import os
 import twilio
 
+from os import getenv
 from twilio.rest import Client
 
 TWILIO_ACCOUNT_SID = getenv('TWILIO_ACCOUNT_SID')
