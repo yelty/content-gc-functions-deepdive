@@ -1,4 +1,4 @@
 steps:
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['functions','deploy','sms-function','--trigger-resource','sms-input','--trigger-event','google.storage.object.finalize','--runtime','python37','--entry-point','send_sms']
+  args: ['functions','deploy','sms-function','--trigger-resource','sms-input','--trigger-event','google.storage.object.finalize','--runtime','python37','--entry-point','send_sms','--region','europe-west1']
   dir: 'functions/autodeploy'
